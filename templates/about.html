@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    <style>
+        /* Background image for the entire page */
+        body {
+            background-image: url('{{ url_for('static', filename='images/about.jpg') }}');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Inline CSS for floating content and light background container */
+        .about-container {
+            background-color: rgba(240, 248, 255, 0.8);
+            padding: 20px;
+            padding-right: 20px;
+            text-align: justify; /* Added justification for text */
+            width: 30%;
+            margin-right: 100px;
+            margin-top: 3px;
+            float: right;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            line-height: 1.6;
+            overflow: hidden;
+        }
+
+        /* Heading styling inside the container */
+        .about-container h2 {
+            font-size: 1.8em;
+            color: #333;
+            margin-bottom: 20px;
+            text-align: center; /* Center align the heading */
+        }
+
+        /* Paragraph styling inside the container */
+        .about-container p {
+            font-size: 1.2em; /* Match font size from the hero section */
+            color: #555;
+            margin-bottom: 20px; /* Add space between paragraphs */
+        }
+
+        /* Footer Section */
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: rgba(241, 241, 241, 0.9);
+            margin-top: 40px;
+        }
+
+        footer p {
+            margin: 0;
+            font-size: 1em;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <h1>About Mantra Classification</h1>
+    </header>
+
+    <!-- Navigation Bar -->
+    <nav>
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/about">About</a></li>
+            <li><a href="/classify">Classify Mantra</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main Content Section -->
+    <div class="container">
+        <section class="about-container">
+            <!-- Heading in the container -->
+            <h2>Classify Your One-Word Mantra Using SVM</h2>
+            <!-- Exact text content inside the floated container -->
+            <p>
+                Our website offers a tool to classify one-word mantras like 'Om,' 'So Hum,' and 'Kohum' using a machine learning algorithm effectively. 
+                Through our extensive research, we conducted a comprehensive analysis of various machine learning algorithms and found that the Support 
+                Vector Machine (SVM) algorithm outperforms other machine learning models when it comes to classifying one-word mantras.
+            </p>
+        </section>
+    </div>
+
+    <!-- Footer Section (optional) -->
+    <footer>
+        <p>&copy; 2024 Mantra Classification Project | All Rights Reserved</p>
+    </footer>
+</body>
+</html>

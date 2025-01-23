@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mantra Classification</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    <style>
+        /* Add background image to the entire page */
+        body {
+            background-image: url('{{ url_for('static', filename='images/home_page.jpg') }}');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed; /* Keeps the background fixed while scrolling */
+            color: #000; /* Text color set to black */
+            margin: 0;
+            font-family: Arial, sans-serif; /* Ensures Arial font is used for all text */
+        }
+
+        /* Inline CSS for the Hero Section */
+        .hero-section {
+            text-align: center;
+            padding: 30px 10px;
+            margin-bottom: 5px;
+            padding-left: 40px;
+            padding-right: 40px;
+        }
+
+        .hero-section h1 {
+            font-size: 2.5em;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .hero-section p {
+            font-size: 1.2em;
+            color: #555;
+            margin-bottom: 40px;  
+            max-width: 800px;      
+            margin-left: auto;     
+            margin-right: auto;    
+        }
+
+        .hero-section .cta-button {
+            font-size: 1.2em;
+            padding: 10px 30px;
+            background-color: #007bff;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+
+        /* Styling for the "What Are One-Word Mantras" section */
+        .mantra-info {
+            text-align: center;
+            padding: 30px 20px;
+            margin-top: 30px;
+            border-radius: 8px;
+            padding-left: 40px;
+            padding-right: 40px;
+        }
+
+        .mantra-info h2 {
+            color: #333;
+            margin-bottom: 20px; /* Add margin to space out the heading and list */
+        }
+
+        /* Center the list items */
+        .mantra-info ul {
+            font-size: 1.1em;
+            color: #555;
+            max-width: 800px;
+            margin: 0 auto; /* Center the list container */
+            padding-left: 0; /* Remove left padding for list */
+            list-style-position: inside; /* Make the bullet point part of the text */
+            display: inline-block; /* This makes the list behave like a block and center itself */
+        }
+
+        /* Adjust the list items */
+        .mantra-info ul li {
+            margin-bottom: 10px; /* Adjust this value if you want more/less space between items */
+            padding-left: 0; /* Remove any padding to the left of list items */
+            text-align: left; /* Make the text left-aligned inside the list */
+        }
+
+        /* Styling for audio player */
+        .audio-player {
+            margin-top: 10px;
+            text-align: center; /* Center the text and audio players */
+        }
+
+        .audio-player h2 {
+            margin-bottom: 10px; /* Adds space between the heading and the description */
+        }
+
+        /* Ensuring the text in the audio player section uses the same font family as the hero section */
+        .audio-player p {
+            margin-bottom: 20px; /* Adds space between the description and the audio controls */
+            font-family: Arial, sans-serif; /* Ensures the same font family is used here */
+            font-size: 1.2em; /* Same font size as the text in the hero section */
+            color: #555; /* Matching color with the hero section text */
+            max-width: 800px; /* Same width as the hero section text */
+            margin-left: auto;
+            margin-right: auto;
+            
+        }
+
+        /* Displaying audio players in a row */
+        .audio-player div {
+            display: inline-block; /* Keep audio players inline */
+            margin-right: 20px; /* Space between the audio players */
+            text-align: center; /* Center the audio player and the text below it */
+        }
+
+        /* Footer Section */
+        footer {
+            text-align: center; 
+            padding: 10px;
+            background-color: #f1f1f1; 
+            margin-top: 20px;
+        }
+
+        footer p {
+            margin: 0; 
+            font-size: 1em;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <h1>Classify One-Word Mantras with SVM</h1>
+    </header>
+
+    <!-- Navigation Bar -->
+    <nav>
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/about">About</a></li>
+            <li><a href="/classify">Classify Mantra</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <h2>The Transformative Power of One-Word Mantras</h2>
+        <p style="text-align: justify;">One-word mantras such as Om, So Hum, and Kohum are powerful sound symbols used in spiritual practices. They are believed to help with meditation, mindfulness, and achieving a deeper connection to the divine. Understanding the origin, meaning, and significance of each mantra can enhance its spiritual power and purpose. Our platform helps you classify these mantras and gain deeper insights.</p>
+    </section>
+
+    <!-- Audio for Mantras Section -->
+    <section class="audio-player">
+        <!-- Text above the audio files -->
+        <h2>Listen to the Mantras:</h2>
+        <p>Relax into the present moment, focus on your breath, and let the sacred mantras surround you, bringing peace, calm, and focus.</p>
+
+        <!-- Audio Players in a single row -->
+        <div>
+            <audio controls>
+                <source src="{{ url_for('static', filename='mantras/om1.mp3') }}" type="audio/mp3">
+                Your browser does not support the audio element.
+            </audio>
+        </div>
+
+        <div>
+            <audio controls>
+                <source src="{{ url_for('static', filename='mantras/sohum1.mp3') }}" type="audio/mp3">
+                Your browser does not support the audio element.
+            </audio>
+        </div>
+
+        <div>
+            <audio controls>
+                <source src="{{ url_for('static', filename='mantras/kohum1.mp3') }}" type="audio/mp3">
+                Your browser does not support the audio element.
+            </audio>
+        </div>
+    </section>
+
+    <!-- Benefits of Practicing Mantras Section -->
+    <section class="mantra-info">
+        <h2>The Benefits of Practicing Mantras</h2>
+        <ul>
+            <li><strong>Mantras for Stress Reduction:</strong> Help calm the mind and alleviate stress.</li>
+            <li><strong>Mantras for Improved Focus:</strong> Sharpen attention and enhance concentration.</li>
+            <li><strong>Mantras for Peace and Calm:</strong> Soothe the soul and bring inner tranquility.</li>
+            <li><strong>Mantras for Prosperity:</strong> Attract wealth and opportunities for growth.</li>
+            <li><strong>Mantras for Mental Clarity:</strong> Boost memory and decision-making abilities.</li>
+            <li><strong>Mantras for Emotional Fulfillment:</strong> Foster love and strengthen relationships.</li>
+            <li><strong>Mantras for Cleansing:</strong> Purify spaces and remove negativity.</li>
+            <li><strong>Mantras for Strength:</strong> Instill courage to face life’s challenges.</li>
+            <li><strong>Mantras for Healing:</strong> Support physical recovery and emotional balance.</li>
+        </ul>
+    </section>
+
+    <!-- Classify Button Section -->
+    <section class="hero-section">
+        <a href="/classify" class="cta-button">Classify Your Mantra Now</a>
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2024 Mantra Classification Project | All Rights Reserved</p>
+    </footer>
+</body>
+</html>

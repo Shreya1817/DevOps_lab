@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Classification Result</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    <style>
+        /* Add background image to the entire page */
+        body {
+            background-image: url('{{ url_for('static', filename='images/result.jpg') }}');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed; /* Keeps the background fixed while scrolling */
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Styling for the container holding the result */
+        .container {
+            width: 70%;
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: rgba(244, 244, 244, 0.8); /* Slight transparency to show the background image */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            text-align: center;
+            border: 2px solid #1E90FF;
+            color: #333;
+        }
+
+        /* Footer Section */
+        footer {
+            text-align: center; 
+            padding: 10px;
+            background-color: #f1f1f1; 
+            margin-top: 145px;
+        }
+
+        footer p {
+            margin: 0; 
+            font-size: 1em;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Classification Result</h1>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/about">About</a></li>
+            <li><a href="/classify">Classify Mantra</a></li>
+        </ul>
+    </nav>
+
+    <!-- Result Container -->
+    <div class="container">
+        <h2 style="color: #333; margin-bottom: 20px; font-size: 24px;">Classification Result</h2>
+        <p style="font-size: 20px; margin-bottom: 20px;">The uploaded mantra is classified as:</p>
+        <p style="font-size: 22px; font-weight: bold; color: #1E90FF;">{{ prediction }}</p>
+    </div>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2024 Mantra Classification Project | All Rights Reserved</p>
+    </footer>
+</body>
+</html>

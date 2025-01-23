@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Classify Mantra</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    <style>
+        /* Background image for the entire page */
+        body {
+            background-image: url('{{ url_for('static', filename='images/classify.jpg') }}');
+            background-size: cover; /* Ensure the image covers the entire page */
+            background-position: center; /* Center the image */
+            background-attachment: fixed; /* Keep the background fixed while scrolling */
+            margin: 0; /* Remove default margin */
+            font-family: Arial, sans-serif; /* Optional: adds a clean font */
+        }
+
+        /* Footer Section */
+        footer {
+            text-align: center; /* Centers the footer text */
+            padding: 10px;
+            background-color: rgba(241, 241, 241, 0.9); /* Light gray background with slight transparency */
+            margin-top: 193px;
+        }
+
+        footer p {
+            margin: 0; /* Removes default margin */
+            font-size: 1em;
+            color: #555;
+        }
+
+        /* Container styling */
+        .container {
+            width: 70%;
+            max-width: 600px;
+            margin: 30px auto;
+            padding: 20px;
+            background-color: rgba(244, 244, 244, 0.9); /* Light background with transparency */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            text-align: center;
+            border: 2px solid #1E90FF;
+            color: #333;
+        }
+
+        /* Form Styling */
+        .form-group label {
+            font-size: 1.1em; /* Match font size from the hero section */
+            color: #555;
+        }
+
+        .submit-button {
+            padding: 12px 24px;
+            font-size: 18px;
+            background-color: #1E90FF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            margin-top: 20px;
+        }
+
+        .submit-button:hover {
+            background-color: #4169E1; /* Darker shade of blue when hovered */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Classify Mantra</h1>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/about">About</a></li>
+            <li><a href="/classify">Classify Mantra</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <h2>Upload a Mantra File for Classification</h2>
+        <form method="POST" enctype="multipart/form-data" class="upload-form">
+            <div class="form-group">
+                <label for="mantra_file">Choose an audio file:</label>
+                <input type="file" name="mantra_file" accept="audio/*" required>
+            </div>
+            <button type="submit" class="submit-button">Upload and Classify</button>
+        </form>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Mantra Classification Project | All Rights Reserved</p>
+    </footer>
+</body>
+</html>
